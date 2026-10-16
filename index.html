@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math English Midterm Review – Grade 11 | Mr. Nguyễn Hữu Trung</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#6366f1;--primary-dark:#4f46e5;--secondary:#ec4899;
+  --accent:#f59e0b;--success:#10b981;--danger:#ef4444;
+  --bg:#f5f3ff;--card:#fff;--text:#1e293b;--muted:#64748b;
+  --shadow:0 10px 30px rgba(99,102,241,.12);
+  --shadow-lg:0 20px 50px rgba(99,102,241,.18);
+}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;
+  background-image:radial-gradient(circle at 10% 10%,rgba(99,102,241,.12) 0,transparent 40%),
+    radial-gradient(circle at 90% 20%,rgba(236,72,153,.10) 0,transparent 40%),
+    radial-gradient(circle at 50% 90%,rgba(245,158,11,.08) 0,transparent 40%);
+  background-attachment:fixed;}
+h1,h2,h3,h4{font-family:'Fredoka',sans-serif;letter-spacing:.3px}
+button{font-family:inherit;cursor:pointer;border:none;outline:none}
+input,select{font-family:inherit;outline:none}
+#loginScreen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;z-index:100;
+  background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#ec4899 100%)}
+.login-card{background:#fff;border-radius:24px;padding:40px 36px;max-width:460px;width:100%;box-shadow:var(--shadow-lg);animation:pop .5s ease}
+@keyframes pop{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:none}}
+.login-card .logo{width:80px;height:80px;margin:0 auto 16px;border-radius:24px;background:linear-gradient(135deg,#6366f1,#ec4899);
+  display:flex;align-items:center;justify-content:center;font-size:40px;color:#fff;box-shadow:0 10px 30px rgba(236,72,153,.35)}
+.login-card h1{font-size:24px;text-align:center;color:#4f46e5;margin-bottom:6px}
+.login-card p.sub{text-align:center;color:var(--muted);font-size:13px;margin-bottom:24px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:#475569;margin-bottom:6px}
+.field input,.field select{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:12px;font-size:14px;transition:.2s;background:#f8fafc}
+.field input:focus,.field select:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+.btn-primary{width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-weight:700;font-size:15px;transition:.2s;letter-spacing:.3px}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(99,102,241,.4)}
+#app{display:none;padding-top:76px}
+.topbar{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(99,102,241,.12);display:flex;align-items:center;padding:0 20px;gap:14px;box-shadow:0 4px 20px rgba(99,102,241,.06)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#4f46e5;font-size:16px}
+.brand .mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#6366f1,#ec4899);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.user-pill{margin-left:auto;display:flex;align-items:center;gap:10px;background:#eef2ff;padding:6px 6px 6px 14px;border-radius:30px;font-size:13px}
+.user-pill .avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ec4899,#f59e0b);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.logout-btn{background:#fff;border-radius:20px;padding:6px 12px;font-size:12px;font-weight:600;color:#ef4444}
+.logout-btn:hover{background:#fef2f2}
+.tabs{display:flex;gap:6px;padding:8px 20px;overflow-x:auto;position:sticky;top:64px;z-index:40;
+  background:rgba(245,243,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(99,102,241,.08)}
+.tabs::-webkit-scrollbar{height:4px}
+.tabs::-webkit-scrollbar-thumb{background:#c7d2fe;border-radius:4px}
+.tab{padding:9px 18px;border-radius:30px;font-size:13px;font-weight:600;background:#fff;color:var(--muted);white-space:nowrap;transition:.2s;border:2px solid transparent}
+.tab:hover{color:var(--primary)}
+.tab.active{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;box-shadow:0 6px 18px rgba(99,102,241,.35)}
+.container{max-width:1180px;margin:0 auto;padding:24px 20px 60px}
+.section{display:none;animation:fade .35s ease}
+.section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 60%,#ec4899 100%);border-radius:24px;padding:28px 30px;color:#fff;margin-bottom:22px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.12);top:-60px;right:-40px}
+.hero::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.10);bottom:-50px;right:80px}
+.hero h2{font-size:26px;margin-bottom:6px;position:relative}
+.hero p{font-size:14px;opacity:.95;position:relative}
+.hero .teacher{font-size:12px;margin-top:8px;opacity:.9;position:relative}
+.card{background:var(--card);border-radius:20px;padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px}
+.card h3{font-size:18px;color:#4f46e5;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.card h3 .num{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.vocab-item{background:linear-gradient(135deg,#f8fafc,#eef2ff);border-radius:14px;padding:14px 16px;border:1px solid #e0e7ff;transition:.25s;position:relative}
+.vocab-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(99,102,241,.15);border-color:#a5b4fc}
+.vocab-item .en{font-weight:700;color:#4f46e5;font-size:15px;display:flex;align-items:center;gap:8px}
+.vocab-item .ipa{font-size:12px;color:#8b5cf6;margin:2px 0 4px;font-style:italic}
+.vocab-item .vi{font-size:13px;color:#475569}
+.speak-btn{background:linear-gradient(135deg,#ec4899,#f59e0b);color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-left:auto;transition:.2s}
+.speak-btn:hover{transform:scale(1.15)}
+.theory-block{background:#f8fafc;border-left:4px solid #6366f1;border-radius:10px;padding:14px 18px;margin-bottom:14px}
+.theory-block h4{color:#4f46e5;font-size:15px;margin-bottom:8px}
+.theory-block ul{margin-left:18px;font-size:14px;color:#334155}
+.theory-block ul li{margin-bottom:4px}
+.formula{background:#eef2ff;border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'Courier New',monospace;font-size:14px;color:#4338ca;border:1px dashed #a5b4fc;white-space:pre-wrap}
+.sys1-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.sys1-tab{padding:10px 18px;border-radius:12px;background:#fff;font-weight:600;font-size:13px;color:var(--muted);border:2px solid #e2e8f0;transition:.2s}
+.sys1-tab.active{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(99,102,241,.3)}
+.q-block{background:#fff;border-radius:16px;padding:20px 22px;margin-bottom:14px;box-shadow:0 4px 16px rgba(15,23,42,.05);border:1px solid #f1f5f9;animation:fade .3s}
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.q-num{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.q-text{font-size:15px;font-weight:500;color:#1e293b}
+.opt-list{display:grid;gap:8px;margin-top:12px}
+.opt{padding:12px 16px;border-radius:12px;border:2px solid #e2e8f0;background:#fafbff;font-size:14px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:10px}
+.opt:hover{border-color:#a5b4fc;background:#eef2ff}
+.opt .letter{width:26px;height:26px;border-radius:8px;background:#e2e8f0;color:#475569;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#dcfce7;border-color:#10b981}
+.opt.correct .letter{background:#10b981;color:#fff}
+.opt.wrong{background:#fee2e2;border-color:#ef4444}
+.opt.wrong .letter{background:#ef4444;color:#fff}
+.opt.locked{cursor:default;pointer-events:none}
+.explain{margin-top:12px;padding:12px 14px;border-radius:10px;background:#fffbeb;border-left:4px solid #f59e0b;font-size:13px;color:#78350f;display:none}
+.explain.show{display:block;animation:fade .3s}
+.explain b{color:#b45309}
+.timer-bar{position:sticky;top:108px;z-index:30;background:linear-gradient(135deg,#1e293b,#334155);color:#fff;border-radius:16px;padding:14px 20px;margin-bottom:18px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow-lg)}
+.timer-bar .time{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:700;letter-spacing:1px}
+.timer-bar .time.warn{color:#fca5a5;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.5}}
+.timer-bar .info{margin-left:auto;font-size:12px;opacity:.85;text-align:right}
+.q-part-title{background:linear-gradient(135deg,#eef2ff,#fce7f3);border-radius:14px;padding:12px 18px;margin:20px 0 14px;font-weight:700;color:#4f46e5;font-size:15px;border-left:4px solid #6366f1}
+.tf-list{display:grid;gap:8px;margin-top:10px}
+.tf-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:14px}
+.tf-row .stmt{flex:1}
+.tf-btn{padding:6px 14px;border-radius:8px;font-weight:700;font-size:12px;background:#e2e8f0;color:#475569;transition:.2s;margin-left:4px}
+.tf-btn.t.selected{background:#10b981;color:#fff}
+.tf-btn.f.selected{background:#ef4444;color:#fff}
+.short-input{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;margin-top:10px;background:#fafbff;transition:.2s}
+.short-input:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 4px rgba(99,102,241,.1)}
+.result-box{background:linear-gradient(135deg,#fff,#f0f9ff);border-radius:20px;padding:24px;text-align:center;box-shadow:var(--shadow-lg);margin-bottom:18px;border:2px solid #bfdbfe}
+.result-box .score{font-size:46px;font-weight:800;font-family:'Fredoka',sans-serif;background:linear-gradient(135deg,#6366f1,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.result-box .label{color:var(--muted);font-size:13px;margin-bottom:6px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:16px}
+.stat{background:#fff;border-radius:14px;padding:14px;text-align:center;border:1px solid #e0e7ff}
+.stat .n{font-size:22px;font-weight:800;color:#4f46e5;font-family:'Fredoka',sans-serif}
+.stat .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.advice{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:14px;padding:16px 20px;margin-top:16px;border-left:4px solid #f59e0b;font-size:14px;color:#78350f;text-align:left}
+.advice h4{color:#b45309;margin-bottom:8px;font-size:15px}
+.btn{padding:12px 26px;border-radius:12px;font-weight:700;font-size:14px;transition:.2s;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(99,102,241,.35)}
+.btn.ghost{background:#fff;color:#4f46e5;border:2px solid #e0e7ff}
+.btn.danger{background:linear-gradient(135deg,#ef4444,#f97316)}
+.rank-table{width:100%;border-collapse:separate;border-spacing:0 6px}
+.rank-table th{text-align:left;padding:10px 14px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.rank-table td{padding:12px 14px;background:#fff;font-size:14px}
+.rank-table tr td:first-child{border-radius:12px 0 0 12px}
+.rank-table tr td:last-child{border-radius:0 12px 12px 0}
+.rank-table .rank-badge{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;background:#e2e8f0;color:#475569}
+.rank-badge.gold{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff}
+.rank-badge.silver{background:linear-gradient(135deg,#cbd5e1,#94a3b8);color:#fff}
+.rank-badge.bronze{background:linear-gradient(135deg,#f59e0b,#b45309);color:#fff}
+.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px}
+.empty .ico{font-size:48px;margin-bottom:10px;opacity:.5}
+.pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#e0e7ff;color:#4f46e5}
+.pill.easy{background:#dcfce7;color:#166534}
+.pill.med{background:#fef3c7;color:#92400e}
+.pill.hard{background:#fee2e2;color:#991b1b}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#1e293b;color:#fff;padding:12px 24px;border-radius:14px;font-size:14px;box-shadow:0 20px 40px rgba(0,0,0,.3);z-index:200;opacity:0;transition:.35s}
+.toast.show{transform:translateX(-50%);opacity:1}
+@media(max-width:640px){.hero h2{font-size:20px}.container{padding:16px 14px 50px}.card{padding:18px}.user-pill span.name{display:none}.timer-bar{top:104px}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="logo">📐</div>
+    <h1>Math Midterm Review</h1>
+    <p class="sub">Grade 11 – English Program | Mid-Term 1</p>
+    <div class="field"><label>Full name / Họ và tên</label><input id="lgName" placeholder="e.g. Nguyen Van A" autocomplete="off"></div>
+    <div class="field"><label>Class / Lớp</label><input id="lgClass" placeholder="e.g. 11A1" autocomplete="off"></div>
+    <div class="field"><label>School / Trường</label><input id="lgSchool" placeholder="e.g. THPT Trần Phú" value="THPT Trần Phú" autocomplete="off"></div>
+    <button class="btn-primary" onclick="doLogin()">🚀 Start Learning</button>
+    <p style="text-align:center;font-size:11px;color:#94a3b8;margin-top:14px">Teacher: Mr. Nguyễn Hữu Trung · 0964 848 989</p>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app">
+  <div class="topbar">
+    <div class="brand"><div class="mark">📐</div><span>Math 11 · Midterm 1</span></div>
+    <div class="user-pill">
+      <span class="name" id="ubName">–</span>
+      <div class="avatar" id="ubAvatar">A</div>
+      <button class="logout-btn" onclick="doLogout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="home">🏠 Home</button>
+    <button class="tab" data-tab="vocab">📚 Vocabulary</button>
+    <button class="tab" data-tab="theory">🧠 Theory</button>
+    <button class="tab" data-tab="sys1">🎯 Practice</button>
+    <button class="tab" data-tab="sys2">📝 Exam</button>
+    <button class="tab" data-tab="rank">🏆 Ranking</button>
+  </div>
+
+  <div class="container">
+
+    <!-- HOME -->
+    <div class="section active" id="sec-home">
+      <div class="hero">
+        <h2>Welcome back, <span id="heroName">Student</span>! 👋</h2>
+        <p>Ôn tập giữa kỳ 1 – Toán tiếng Anh lớp 11 (Kết nối tri thức với cuộc sống)</p>
+        <p class="teacher">GV: Nguyễn Hữu Trung – THPT Trần Phú – 0964 848 989</p>
+      </div>
+      <div class="card">
+        <h3><span class="num">1</span>Chương trình ôn tập (3 chương)</h3>
+        <ul style="margin-left:20px;font-size:14px;color:#475569">
+          <li><b>Chapter 1 – Trigonometry:</b> trigonometric values of an angle, trigonometric identities, addition/double-angle formulas, trigonometric equations & general solutions.</li>
+          <li><b>Chapter 2 – Sequences:</b> sequences, arithmetic progression (uₙ = u₁ + (n−1)d), geometric progression (uₙ = u₁·qⁿ⁻¹), sums of AP & GP, sum to infinity.</li>
+          <li><b>Chapter 3 – Statistics:</b> grouped data, frequency table, mean, median, mode, quartiles for grouped data.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="num">2</span>How to use this website</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+          <div class="theory-block"><h4>📚 Vocabulary</h4><p style="font-size:13px">36 key math terms with IPA + clickable pronunciation.</p></div>
+          <div class="theory-block" style="border-color:#ec4899"><h4>🧠 Theory</h4><p style="font-size:13px">All formulas &amp; properties you must memorise.</p></div>
+          <div class="theory-block" style="border-color:#10b981"><h4>🎯 Practice (System 1)</h4><p style="font-size:13px">30 MCQs (3 groups × 10), instant feedback + error analysis.</p></div>
+          <div class="theory-block" style="border-color:#f59e0b"><h4>📝 Exam (System 2)</h4><p style="font-size:13px">66 questions (3 groups × 22) in Bộ GD 3-part format, with timer.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOCABULARY -->
+    <div class="section" id="sec-vocab">
+      <div class="hero" style="background:linear-gradient(135deg,#06b6d4,#6366f1)">
+        <h2>📚 Math Vocabulary</h2>
+        <p>Click 🔊 to hear the pronunciation. Practice saying the words aloud.</p>
+      </div>
+      <div class="card"><h3><span class="num">1</span>Trigonometry</h3><div class="vocab-grid" id="vocab1"></div></div>
+      <div class="card"><h3><span class="num">2</span>Sequences</h3><div class="vocab-grid" id="vocab2"></div></div>
+      <div class="card"><h3><span class="num">3</span>Statistics (Grouped Data)</h3><div class="vocab-grid" id="vocab3"></div></div>
+    </div>
+
+    <!-- THEORY -->
+    <div class="section" id="sec-theory">
+      <div class="hero" style="background:linear-gradient(135deg,#10b981,#06b6d4)">
+        <h2>🧠 Theory to Remember</h2>
+        <p>Summary of all key knowledge for Mid-Term 1 (3 chapters).</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="num">1</span>Trigonometry</h3>
+        <div class="theory-block">
+          <h4>Radian – Degree</h4>
+          <div class="formula">π rad = 180°     1 rad = (180/π)°     1° = π/180 rad</div>
+        </div>
+        <div class="theory-block">
+          <h4>Basic values</h4>
+          <div class="formula">sin 0 = 0,  cos 0 = 1
+sin π/6 = 1/2,  cos π/6 = √3/2
+sin π/4 = √2/2, cos π/4 = √2/2
+sin π/3 = √3/2, cos π/3 = 1/2
+sin π/2 = 1,   cos π/2 = 0</div>
+        </div>
+        <div class="theory-block">
+          <h4>Basic identities</h4>
+          <div class="formula">sin²α + cos²α = 1
+tan α = sin α / cos α   (cos α ≠ 0)
+cot α = cos α / sin α   (sin α ≠ 0)
+1 + tan²α = 1/cos²α
+1 + cot²α = 1/sin²α</div>
+        </div>
+        <div class="theory-block">
+          <h4>Addition formulas</h4>
+          <div class="formula">sin(a ± b) = sin a · cos b ± cos a · sin b
+cos(a ± b) = cos a · cos b ∓ sin a · sin b
+tan(a ± b) = (tan a ± tan b) / (1 ∓ tan a · tan b)</div>
+        </div>
+        <div class="theory-block">
+          <h4>Double-angle formulas</h4>
+          <div class="formula">sin 2a = 2 sin a · cos a
+cos 2a = cos²a − sin²a = 2cos²a − 1 = 1 − 2sin²a
+tan 2a = 2tan a / (1 − tan²a)</div>
+        </div>
+        <div class="theory-block">
+          <h4>Product-to-sum & Sum-to-product</h4>
+          <div class="formula">cos a · cos b = ½[cos(a−b) + cos(a+b)]
+sin a · sin b = ½[cos(a−b) − cos(a+b)]
+sin a · cos b = ½[sin(a+b) + sin(a−b)]
+
+sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2)
+sin u − sin v = 2 cos((u+v)/2) sin((u−v)/2)
+cos u + cos v = 2 cos((u+v)/2) cos((u−v)/2)
+cos u − cos v = −2 sin((u+v)/2) sin((u−v)/2)</div>
+        </div>
+        <div class="theory-block">
+          <h4>Basic trigonometric equations</h4>
+          <div class="formula">sin x = m  (|m| ≤ 1):
+  x = arcsin m + k2π   or   x = π − arcsin m + k2π
+
+cos x = m  (|m| ≤ 1):
+  x = ± arccos m + k2π
+
+tan x = m:
+  x = arctan m + kπ
+
+cot x = m:
+  x = arccot m + kπ</div>
+          <ul>
+            <li>Special cases: sin x = 1 ⇒ x = π/2 + k2π; cos x = 1 ⇒ x = k2π; cos x = 0 ⇒ x = π/2 + kπ.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="num">2</span>Sequences – Arithmetic &amp; Geometric Progressions</h3>
+        <div class="theory-block">
+          <h4>Sequence</h4>
+          <ul>
+            <li>A <b>sequence</b> (uₙ) is a function defined on ℕ*: u(1), u(2), u(3), …</li>
+            <li>Recurrence relation: given u₁ and formula for u_{n+1} in terms of uₙ.</li>
+          </ul>
+        </div>
+        <div class="theory-block">
+          <h4>Arithmetic progression (AP)</h4>
+          <div class="formula">u_{n+1} = uₙ + d    (d = common difference)
+uₙ = u₁ + (n − 1)d
+
+Sₙ = n(u₁ + uₙ)/2 = n[2u₁ + (n − 1)d]/2</div>
+        </div>
+        <div class="theory-block">
+          <h4>Geometric progression (GP)</h4>
+          <div class="formula">u_{n+1} = uₙ · q    (q = common ratio)
+uₙ = u₁ · q^{n−1}
+
+Sₙ = u₁(1 − qⁿ)/(1 − q)   (q ≠ 1)
+Sₙ = n·u₁                 (q = 1)
+
+Sum to infinity (|q| < 1):
+S = u₁ / (1 − q)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="num">3</span>Statistics for Grouped Data</h3>
+        <div class="theory-block">
+          <h4>Notation</h4>
+          <ul>
+            <li>Groups: [a₁; a₂), [a₂; a₃), …, [a_k; a_{k+1}).</li>
+            <li>Frequency of group i: n_i.</li>
+            <li>Midpoint (representative value) of group i: c_i = (a_i + a_{i+1})/2.</li>
+            <li>Sample size: N = n₁ + n₂ + … + n_k.</li>
+          </ul>
+        </div>
+        <div class="theory-block">
+          <h4>Mean of grouped data</h4>
+          <div class="formula">x̄ = (n₁c₁ + n₂c₂ + … + n_k c_k) / N = (Σ n_i c_i) / N</div>
+        </div>
+        <div class="theory-block">
+          <h4>Median of grouped data</h4>
+          <ul>
+            <li>Find the group containing position N/2 (median group).</li>
+            <li>Let that group be [a; b) with frequency n_m, cumulative frequency before it C, group width h = b − a.</li>
+          </ul>
+          <div class="formula">Mₑ = a + [(N/2 − C) / n_m] · h</div>
+        </div>
+        <div class="theory-block">
+          <h4>Mode of grouped data</h4>
+          <ul>
+            <li>Identify the group with highest frequency (modal group) [a; b), width h.</li>
+            <li>n_m = frequency of modal group; n_{m−1}, n_{m+1} = frequencies of adjacent groups.</li>
+          </ul>
+          <div class="formula">M₀ = a + [(n_m − n_{m−1}) / ((n_m − n_{m−1}) + (n_m − n_{m+1}))] · h</div>
+        </div>
+        <div class="theory-block">
+          <h4>Quartiles (grouped data)</h4>
+          <div class="formula">Q₁ uses position N/4;   Q₃ uses position 3N/4
+Q_p = a + [(pN/4 − C) / n_Q] · h   (p = 1, 2, 3)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYSTEM 1 -->
+    <div class="section" id="sec-sys1">
+      <div class="hero" style="background:linear-gradient(135deg,#10b981,#059669)">
+        <h2>🎯 Practice – System 1</h2>
+        <p>30 MCQs (3 groups × 10) · Instant feedback · Error analysis &amp; study advice</p>
+      </div>
+      <div class="sys1-tabs">
+        <button class="sys1-tab active" data-g="1">Group 1 · Trigonometry</button>
+        <button class="sys1-tab" data-g="2">Group 2 · Sequences</button>
+        <button class="sys1-tab" data-g="3">Group 3 · Statistics</button>
+      </div>
+      <div id="sys1Content"></div>
+    </div>
+
+    <!-- SYSTEM 2 -->
+    <div class="section" id="sec-sys2">
+      <div class="hero" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">
+        <h2>📝 Mock Exam – System 2</h2>
+        <p>Bộ GD 3-part format · 22 questions per group · Timer · Auto scoring</p>
+      </div>
+      <div class="sys1-tabs">
+        <button class="sys1-tab active" data-s2="1">📘 Group 1 · Trigonometry</button>
+        <button class="sys1-tab" data-s2="2">📗 Group 2 · Sequences</button>
+        <button class="sys1-tab" data-s2="3">📙 Group 3 · Statistics</button>
+      </div>
+      <div id="sys2Content"></div>
+    </div>
+
+    <!-- RANKING -->
+    <div class="section" id="sec-rank">
+      <div class="hero" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)">
+        <h2>🏆 Daily Ranking</h2>
+        <p>Higher score ranks higher. Ties broken by shorter time.</p>
+      </div>
+      <div class="card">
+        <h3><span class="num">🏅</span>Today's Leaderboard</h3>
+        <div id="rankContent"></div>
+        <div style="margin-top:14px;text-align:right">
+          <button class="btn ghost" onclick="clearRank()">🗑 Clear today's data</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   VOCABULARY
+   ============================================================ */
+const VOCAB = {
+  1:[
+    {en:"Radian",ipa:"/ˈreɪdiən/",vi:"radian"},
+    {en:"Degree",ipa:"/dɪˈɡriː/",vi:"độ"},
+    {en:"Sine",ipa:"/saɪn/",vi:"sin"},
+    {en:"Cosine",ipa:"/ˈkəʊsaɪn/",vi:"cos"},
+    {en:"Tangent",ipa:"/ˈtændʒənt/",vi:"tan"},
+    {en:"Cotangent",ipa:"/kəʊˈtændʒənt/",vi:"cot"},
+    {en:"Identity",ipa:"/aɪˈdentəti/",vi:"đồng nhất thức"},
+    {en:"Addition formula",ipa:"/əˈdɪʃn ˈfɔːmjələ/",vi:"công thức cộng"},
+    {en:"Double angle",ipa:"/ˈdʌbl ˈæŋɡl/",vi:"góc nhân đôi"},
+    {en:"Equation",ipa:"/ɪˈkweɪʒn/",vi:"phương trình"},
+    {en:"General solution",ipa:"/ˈdʒenrəl səˈluːʃn/",vi:"nghiệm tổng quát"},
+    {en:"Period",ipa:"/ˈpɪəriəd/",vi:"chu kỳ"}
+  ],
+  2:[
+    {en:"Sequence",ipa:"/ˈsiːkwəns/",vi:"dãy số"},
+    {en:"Term",ipa:"/tɜːm/",vi:"số hạng"},
+    {en:"First term",ipa:"/fɜːst tɜːm/",vi:"số hạng đầu"},
+    {en:"General term",ipa:"/ˈdʒenrəl tɜːm/",vi:"số hạng tổng quát"},
+    {en:"Arithmetic progression",ipa:"/əˈrɪθmətɪk prəˈɡreʃn/",vi:"cấp số cộng"},
+    {en:"Common difference",ipa:"/ˈkɒmən ˈdɪfrəns/",vi:"công sai"},
+    {en:"Geometric progression",ipa:"/ˌdʒiːəˈmetrɪk prəˈɡreʃn/",vi:"cấp số nhân"},
+    {en:"Common ratio",ipa:"/ˈkɒmən ˈreɪʃiəʊ/",vi:"công bội"},
+    {en:"Sum of terms",ipa:"/sʌm əv tɜːmz/",vi:"tổng các số hạng"},
+    {en:"Recurrence",ipa:"/rɪˈkʌrəns/",vi:"công thức truy hồi"},
+    {en:"Increasing",ipa:"/ɪnˈkriːsɪŋ/",vi:"tăng"},
+    {en:"Decreasing",ipa:"/dɪˈkriːsɪŋ/",vi:"giảm"}
+  ],
+  3:[
+    {en:"Statistics",ipa:"/stəˈtɪstɪks/",vi:"thống kê"},
+    {en:"Frequency",ipa:"/ˈfriːkwənsi/",vi:"tần số"},
+    {en:"Grouped data",ipa:"/ɡruːpt ˈdeɪtə/",vi:"số liệu ghép nhóm"},
+    {en:"Mean",ipa:"/miːn/",vi:"số trung bình"},
+    {en:"Median",ipa:"/ˈmiːdiən/",vi:"số trung vị"},
+    {en:"Mode",ipa:"/məʊd/",vi:"mốt"},
+    {en:"Quartile",ipa:"/ˈkwɔːtaɪl/",vi:"tứ phân vị"},
+    {en:"Sample",ipa:"/ˈsɑːmpl/",vi:"mẫu"},
+    {en:"Midpoint",ipa:"/ˈmɪdpɔɪnt/",vi:"giá trị đại diện"},
+    {en:"Class interval",ipa:"/klɑːs ˈɪntəvl/",vi:"nhóm (khoảng)"},
+    {en:"Cumulative frequency",ipa:"/ˈkjuːmjələtɪv ˈfriːkwənsi/",vi:"tần số tích lũy"},
+    {en:"Central tendency",ipa:"/ˈsentrəl ˈtendənsi/",vi:"xu hướng trung tâm"}
+  ]
+};
+
+/* ============================================================
+   SYSTEM 1 — 3 groups × 10 MCQs
+   ============================================================ */
+const SYS1 = {
+  1:[
+    {q:"Convert 60° to radians.",opts:["π/6","π/4","π/3","π/2"],ans:2,exp:"60° = 60·(π/180) = π/3."},
+    {q:"Compute sin(π/6).",opts:["1/2","√2/2","√3/2","1"],ans:0,exp:"sin(π/6) = 1/2."},
+    {q:"Compute cos(π/3).",opts:["1/2","√2/2","√3/2","0"],ans:0,exp:"cos(π/3) = 1/2."},
+    {q:"Compute tan(π/4).",opts:["0","1","√3","−1"],ans:1,exp:"tan(π/4) = 1."},
+    {q:"If sin α = 3/5 (α in quadrant I), find cos α.",opts:["4/5","−4/5","3/4","−3/4"],ans:0,exp:"cos²α = 1 − 9/25 = 16/25 ⇒ cos α = 4/5 (Q I)."},
+    {q:"Which of the following is true?",opts:["sin²x + cos²x = 0","sin²x + cos²x = 1","sin²x − cos²x = 1","sin x · cos x = 1"],ans:1,exp:"Fundamental Pythagorean identity."},
+    {q:"sin(a + b) equals:",opts:["sin a·cos b − cos a·sin b","sin a·cos b + cos a·sin b","cos a·cos b + sin a·sin b","sin a + sin b"],ans:1,exp:"Standard sine addition formula."},
+    {q:"cos 2a equals:",opts:["2 sin a·cos a","cos²a − sin²a","1 + 2sin²a","cos a + sin a"],ans:1,exp:"cos 2a = cos²a − sin²a."},
+    {q:"General solution of sin x = 0:",opts:["x = kπ","x = k2π","x = π/2 + kπ","x = π + k2π"],ans:0,exp:"sin x = 0 ⇔ x = kπ (k ∈ ℤ)."},
+    {q:"General solution of cos x = 1:",opts:["x = kπ","x = k2π","x = π/2 + kπ","x = π/2 + k2π"],ans:1,exp:"cos x = 1 ⇔ x = k2π."}
+  ],
+  2:[
+    {q:"An arithmetic progression has u₁ = 2, d = 3. Find u₅.",opts:["11","14","17","12"],ans:1,exp:"u₅ = 2 + 4·3 = 14."},
+    {q:"An AP has u₁ = 1, d = 2. Find S₁₀.",opts:["90","100","110","120"],ans:1,exp:"S₁₀ = 10[2·1 + 9·2]/2 = 10·20/2 = 100."},
+    {q:"A GP has u₁ = 2, q = 3. Find u₄.",opts:["18","27","54","81"],ans:2,exp:"u₄ = 2·3³ = 54."},
+    {q:"A GP has u₁ = 1, q = 2. Find S₅.",opts:["15","16","31","32"],ans:2,exp:"S₅ = 1·(2⁵−1)/(2−1) = 31."},
+    {q:"An AP has u₁ = 10, u₅ = 30. Find d.",opts:["3","4","5","6"],ans:2,exp:"30 = 10 + 4d ⇒ d = 5."},
+    {q:"Formula for the nth term of AP:",opts:["uₙ = u₁ + n·d","uₙ = u₁ + (n−1)d","uₙ = u₁·dⁿ⁻¹","uₙ = u₁·d"],ans:1,exp:"Standard AP formula."},
+    {q:"An AP has u₁ = 5, d = −2. Find u₁₀.",opts:["−13","−15","−17","13"],ans:0,exp:"u₁₀ = 5 + 9·(−2) = −13."},
+    {q:"Formula for the nth term of GP:",opts:["uₙ = u₁ + (n−1)q","uₙ = u₁·q^{n−1}","uₙ = u₁·n·q","uₙ = u₁ + n·q"],ans:1,exp:"Standard GP formula."},
+    {q:"Sum to infinity of GP exists when:",opts:["|q| > 1","|q| = 1","|q| < 1","q = 0"],ans:2,exp:"S = u₁/(1−q) for |q| < 1."},
+    {q:"In a GP with u₁ = 3, q = 2, u₅ = ?",opts:["24","48","96","192"],ans:1,exp:"u₅ = 3·2⁴ = 48."}
+  ],
+  3:[
+    {q:"Group [10; 20) has midpoint equal to:",opts:["10","15","20","30"],ans:1,exp:"c = (10+20)/2 = 15."},
+    {q:"Formula for the mean of grouped data:",opts:["x̄ = Σnᵢcᵢ / N","x̄ = Σnᵢ / N","x̄ = N / Σnᵢcᵢ","x̄ = (max + min)/2"],ans:0,exp:"x̄ = (n₁c₁ + … + n_k c_k)/N."},
+    {q:"In grouped data, the median position is at:",opts:["N/4","N/3","N/2","3N/4"],ans:2,exp:"Median lies at cumulative position N/2."},
+    {q:"The mode of grouped data is:",opts:["The midpoint of the largest group","The modal class value","The smallest value","The mean"],ans:0,exp:"Use formula M₀ = a + [(n_m−n_{m−1})/((n_m−n_{m−1})+(n_m−n_{m+1}))]·h."},
+    {q:"The first quartile Q₁ uses position:",opts:["N/4","N/2","3N/4","N"],ans:0,exp:"Q₁ ↔ N/4."},
+    {q:"Frequencies 2, 3, 5 for three groups ⇒ N =",opts:["8","9","10","15"],ans:2,exp:"N = 2 + 3 + 5 = 10."},
+    {q:"If the modal group is [20; 30) with width 10, the mode is between:",opts:["10 and 20","20 and 30","0 and 10","30 and 40"],ans:1,exp:"Mode always lies in the modal group."},
+    {q:"Median of data set {1, 2, 3, 4, 5} is:",opts:["2","3","4","2.5"],ans:1,exp:"Middle value of 5 sorted data = 3."},
+    {q:"For grouped data, the mean uses each group's:",opts:["Smallest value","Largest value","Midpoint","Frequency"],ans:2,exp:"Use cᵢ = (aᵢ + aᵢ₊₁)/2."},
+    {q:"The three quartiles Q₁, Q₂, Q₃ divide the data into:",opts:["2 parts","3 parts","4 parts","5 parts"],ans:2,exp:"Quartiles split data into 4 equal parts."}
+  ]
+};
+
+/* ============================================================
+   SYSTEM 2 — 3 groups × 22 (12 MC + 4 TF + 6 Short)
+   ============================================================ */
+const SYS2 = {
+  1:{
+    mc:[
+      {q:"π radians equals:",opts:["90°","180°","270°","360°"],ans:1,exp:"π rad = 180°."},
+      {q:"sin(π/4) equals:",opts:["1/2","√2/2","√3/2","1"],ans:1,exp:"sin(π/4) = √2/2."},
+      {q:"cos(π/6) equals:",opts:["1/2","√2/2","√3/2","1"],ans:2,exp:"cos(π/6) = √3/2."},
+      {q:"If cos α = 4/5 (α in quadrant I), then sin α =",opts:["3/5","−3/5","5/4","4/3"],ans:0,exp:"sin²α = 1 − 16/25 = 9/25 ⇒ sin α = 3/5."},
+      {q:"tan(π/3) equals:",opts:["1","√3","1/√3","−1"],ans:1,exp:"tan(π/3) = √3."},
+      {q:"sin(a − b) equals:",opts:["sin a·cos b − cos a·sin b","sin a·cos b + cos a·sin b","cos a·cos b − sin a·sin b","sin a − sin b"],ans:0,exp:"Standard subtraction formula."},
+      {q:"Which identity is TRUE?",opts:["cos 2a = 1 − 2sin²a","cos 2a = 1 + 2sin²a","sin 2a = 2sin a","tan 2a = tan a"],ans:0,exp:"cos 2a = 1 − 2sin²a."},
+      {q:"sin 2a equals:",opts:["sin a + cos a","2 sin a·cos a","cos²a − sin²a","1 − cos a"],ans:1,exp:"sin 2a = 2 sin a·cos a."},
+      {q:"General solution of tan x = 1:",opts:["x = π/4 + kπ","x = π/4 + k2π","x = π/2 + kπ","x = kπ"],ans:0,exp:"tan has period π."},
+      {q:"General solution of sin x = 1/2:",opts:["x = π/6 + k2π only","x = π/6 + k2π or 5π/6 + k2π","x = π/3 + kπ","x = π/3 + k2π"],ans:1,exp:"Two families of solutions."},
+      {q:"cos²a − sin²a equals:",opts:["cos 2a","sin 2a","1","−1"],ans:0,exp:"By double-angle formula."},
+      {q:"If sin α = 1/2 and α ∈ (0, π/2), then α =",opts:["π/6","π/4","π/3","π/2"],ans:0,exp:"α = π/6."}
+    ],
+    tf:[
+      {q:"About trigonometric identities:",
+       items:[
+         {s:"sin²α + cos²α = 1 for all α.",a:true,e:"Fundamental identity."},
+         {s:"1 + tan²α = 1/cos²α (cos α ≠ 0).",a:true,e:"Standard identity."},
+         {s:"tan α · cot α = 1 when both are defined.",a:true,e:"tan α = 1/cot α."},
+         {s:"sin(−α) = sin α.",a:false,e:"sin(−α) = −sin α (odd function)."}
+       ]},
+      {q:"About addition formulas:",
+       items:[
+         {s:"sin(a + b) = sin a·cos b + cos a·sin b.",a:true,e:"Standard formula."},
+         {s:"cos(a + b) = cos a·cos b + sin a·sin b.",a:false,e:"Should be −sin a·sin b."},
+         {s:"tan(a + b) = (tan a + tan b)/(1 − tan a·tan b).",a:true,e:"Standard formula."},
+         {s:"sin(a − b) = sin a·cos b − cos a·sin b.",a:true,e:"Standard subtraction."}
+       ]},
+      {q:"About trigonometric equations:",
+       items:[
+         {s:"sin x = 2 has real solutions.",a:false,e:"|sin x| ≤ 1."},
+         {s:"cos x = 1 ⇔ x = k2π.",a:true,e:"Standard solution."},
+         {s:"tan x is periodic with period π.",a:true,e:"Period of tan is π."},
+         {s:"sin x = 0 ⇔ x = π/2 + kπ.",a:false,e:"Should be x = kπ."}
+       ]},
+      {q:"About double-angle formulas:",
+       items:[
+         {s:"cos 2a = 2cos²a − 1.",a:true,e:"Equivalent form."},
+         {s:"sin 2a = 2sin a·cos a.",a:true,e:"Standard."},
+         {s:"tan 2a = 2tan a/(1 − tan²a).",a:true,e:"Standard (when defined)."},
+         {s:"cos 2a = sin²a − cos²a.",a:false,e:"Sign reversed."}
+       ]}
+    ],
+    short:[
+      {q:"Compute sin(π/6).",ans:"1/2",exp:"Known value."},
+      {q:"Compute cos(π).",ans:"-1",exp:"cos π = −1."},
+      {q:"Compute tan(π/4).",ans:"1",exp:"Known value."},
+      {q:"Compute sin²(π/6) + cos²(π/6).",ans:"1",exp:"Basic identity."},
+      {q:"General solution of cos x = 0: x = π/2 + k·___. (enter number)",ans:"π",exp:"x = π/2 + kπ."},
+      {q:"Compute sin(π/3). Write as (√a)/b (enter a).",ans:"3",exp:"sin(π/3) = √3/2, so a = 3."}
+    ]
+  },
+  2:{
+    mc:[
+      {q:"Given AP with u₁ = 3, d = 4. Find u₇.",opts:["27","31","35","24"],ans:0,exp:"u₇ = 3 + 6·4 = 27."},
+      {q:"Given AP with u₁ = 5, d = 2. Find S₁₀.",opts:["130","140","150","120"],ans:1,exp:"S₁₀ = 10[10 + 9·2]/2 = 10·28/2 = 140."},
+      {q:"Given GP with u₁ = 2, q = 3. Find u₄.",opts:["18","27","54","81"],ans:2,exp:"u₄ = 2·27 = 54."},
+      {q:"In an AP, if u₁ = 1 and u₅ = 13, find d.",opts:["2","3","4","5"],ans:1,exp:"13 = 1 + 4d ⇒ d = 3."},
+      {q:"Which formula represents an AP?",opts:["uₙ = u₁ + (n−1)d","uₙ = u₁·qⁿ⁻¹","uₙ = n·u₁","uₙ = u₁/d"],ans:0,exp:"AP formula."},
+      {q:"Sum of first n terms of GP (q ≠ 1):",opts:["Sₙ = n·u₁","Sₙ = u₁(1 − qⁿ)/(1 − q)","Sₙ = u₁ + (n−1)q","Sₙ = u₁·qⁿ"],ans:1,exp:"Standard GP sum."},
+      {q:"Given GP with u₁ = 1, q = 1/2. Find S.",opts:["1","2","3","4"],ans:1,exp:"S = 1/(1 − 1/2) = 2."},
+      {q:"If AP has u₁ = 5, d = −3, then u₈ =",opts:["−16","−13","−19","−11"],ans:0,exp:"u₈ = 5 + 7·(−3) = −16."},
+      {q:"If GP has u₁ = 3, q = −2, then u₅ =",opts:["48","−48","96","−96"],ans:0,exp:"u₅ = 3·(−2)⁴ = 3·16 = 48."},
+      {q:"Sum 1 + 2 + 4 + 8 + … + 2⁹ (10 terms of GP, u₁ = 1, q = 2):",opts:["512","1023","1024","2047"],ans:1,exp:"S₁₀ = (2¹⁰ − 1)/(2 − 1) = 1023."},
+      {q:"Which is TRUE for an AP?",opts:["u_{n+1} = uₙ · d","u_{n+1} = uₙ + d","u_{n+1} = uₙ − d always","u_{n+1} = d"],ans:1,exp:"Recurrence relation of AP."},
+      {q:"For GP with |q| < 1, sum to infinity S =",opts:["u₁/(1+q)","u₁/(1−q)","u₁·q","u₁·n"],ans:1,exp:"S = u₁/(1 − q)."}
+    ],
+    tf:[
+      {q:"About sequences:",
+       items:[
+         {s:"A sequence is a function defined on ℕ*.",a:true,e:"Standard definition."},
+         {s:"Every sequence has a finite number of terms.",a:false,e:"Sequences can be infinite."},
+         {s:"uₙ denotes the nth term of a sequence.",a:true,e:"Notation."},
+         {s:"A sequence can be defined by a recurrence relation.",a:true,e:"E.g., u_{n+1} = 2uₙ."}
+       ]},
+      {q:"About arithmetic progressions:",
+       items:[
+         {s:"AP: u_{n+1} = uₙ + d.",a:true,e:"Definition."},
+         {s:"In an AP, the difference of consecutive terms is constant.",a:true,e:"Definition of AP."},
+         {s:"uₙ = u₁ + (n − 1)d.",a:true,e:"General term."},
+         {s:"AP always has positive common difference.",a:false,e:"d can be negative or zero."}
+       ]},
+      {q:"About geometric progressions:",
+       items:[
+         {s:"GP: u_{n+1} = uₙ · q.",a:true,e:"Definition."},
+         {s:"In a GP, the ratio of consecutive terms is constant.",a:true,e:"Definition of GP."},
+         {s:"uₙ = u₁ · q^{n−1}.",a:true,e:"General term."},
+         {s:"Every GP has a finite sum to infinity.",a:false,e:"Only if |q| < 1."}
+       ]},
+      {q:"About sums:",
+       items:[
+         {s:"Sₙ of an AP = n(u₁ + uₙ)/2.",a:true,e:"Standard formula."},
+         {s:"Sₙ of a GP = u₁(1 − qⁿ)/(1 − q) when q ≠ 1.",a:true,e:"Standard formula."},
+         {s:"S = u₁/(1 − q) requires |q| < 1.",a:true,e:"Convergence condition."},
+         {s:"Sum of AP is always positive.",a:false,e:"Depends on terms."}
+       ]}
+    ],
+    short:[
+      {q:"u₁ = 2, d = 5. Find u₆.",ans:"27",exp:"u₆ = 2 + 5·5 = 27."},
+      {q:"u₁ = 3, q = 2. Find u₅.",ans:"48",exp:"u₅ = 3·2⁴ = 48."},
+      {q:"AP with u₁ = 1, d = 1. Find S₁₀₀.",ans:"5050",exp:"S₁₀₀ = 100·101/2 = 5050."},
+      {q:"GP with u₁ = 1, q = 1/3. Find S.",ans:"1.5",exp:"S = 1/(1 − 1/3) = 3/2 = 1.5."},
+      {q:"In an AP, u₁ = 4, u₃ = 10. Find d.",ans:"3",exp:"10 = 4 + 2d ⇒ d = 3."},
+      {q:"In a GP, u₁ = 2, u₃ = 8. Find q > 0.",ans:"2",exp:"8 = 2·q² ⇒ q = 2."}
+    ]
+  },
+  3:{
+    mc:[
+      {q:"Midpoint of group [20; 30):",opts:["20","25","30","15"],ans:1,exp:"(20+30)/2 = 25."},
+      {q:"Grouped data mean formula:",opts:["x̄ = Σnᵢcᵢ/N","x̄ = Σcᵢ/N","x̄ = N/Σnᵢ","x̄ = (max − min)/2"],ans:0,exp:"Weighted mean using midpoints."},
+      {q:"Frequencies 4, 6, 10 ⇒ N =",opts:["16","18","20","24"],ans:2,exp:"4+6+10 = 20."},
+      {q:"Median of grouped data is calculated using:",opts:["Group midpoint only","N/2 position, then formula","max − min","The mode"],ans:1,exp:"Mₑ = a + [(N/2 − C)/n_m]·h."},
+      {q:"Modal group is the group with:",opts:["Lowest frequency","Highest frequency","Largest width","Smallest midpoint"],ans:1,exp:"Definition of mode."},
+      {q:"Q₃ corresponds to cumulative position:",opts:["N/4","N/2","3N/4","N"],ans:2,exp:"Third quartile."},
+      {q:"The three quartiles divide data into:",opts:["2 parts","3 parts","4 parts","5 parts"],ans:2,exp:"Q₁, Q₂, Q₃ → 4 equal parts."},
+      {q:"If data has 40 values, median is at position:",opts:["10","15","20","30"],ans:2,exp:"N/2 = 20."},
+      {q:"For group [0; 10) with n = 3, its contribution to mean is:",opts:["3·0","3·5","3·10","3/10"],ans:1,exp:"Use midpoint c = 5."},
+      {q:"In grouped data, if frequency table is [5;10) n=2, [10;15) n=5, [15;20) n=3, then modal group is:",opts:["[5;10)","[10;15)","[15;20)","None"],ans:1,exp:"Highest n = 5."},
+      {q:"Median of {2, 5, 7, 9, 12} is:",opts:["5","7","9","2"],ans:1,exp:"Middle of 5 = 7."},
+      {q:"Which measure is most affected by extreme values?",opts:["Mode","Median","Mean","Quartile"],ans:2,exp:"Mean uses all values."}
+    ],
+    tf:[
+      {q:"About grouped data:",
+       items:[
+         {s:"In grouped data, we use midpoints to compute mean.",a:true,e:"Standard method."},
+         {s:"The modal group always exists and is unique.",a:false,e:"Could tie in frequency."},
+         {s:"The width h of a group equals upper − lower bound.",a:true,e:"h = b − a."},
+         {s:"Grouped data mean is exact.",a:false,e:"It's an approximation using midpoints."}
+       ]},
+      {q:"About median of grouped data:",
+       items:[
+         {s:"Formula: Mₑ = a + [(N/2 − C)/n_m]·h.",a:true,e:"Standard formula."},
+         {s:"C is the cumulative frequency before the median group.",a:true,e:"Definition."},
+         {s:"n_m is the frequency of the median group.",a:true,e:"Definition."},
+         {s:"Median always lies in the modal group.",a:false,e:"Median and mode groups differ."}
+       ]},
+      {q:"About quartiles:",
+       items:[
+         {s:"Q₁ uses position N/4.",a:true,e:"Standard."},
+         {s:"Q₂ equals the median.",a:true,e:"Q₂ = median at N/2."},
+         {s:"Q₃ uses position 3N/4.",a:true,e:"Standard."},
+         {s:"Quartiles always equal to mean.",a:false,e:"Different statistics."}
+       ]},
+      {q:"About mode:",
+       items:[
+         {s:"Mode of grouped data uses adjacent frequencies.",a:true,e:"Formula with n_{m−1}, n_{m+1}."},
+         {s:"Mode is the value with highest frequency.",a:true,e:"Definition."},
+         {s:"Every dataset has exactly one mode.",a:false,e:"Can be multimodal."},
+         {s:"Mode lies in the modal group.",a:true,e:"Property."}
+       ]}
+    ],
+    short:[
+      {q:"Midpoint of group [40; 60).",ans:"50",exp:"(40+60)/2 = 50."},
+      {q:"Frequencies 3, 5, 7, 5. N = ?",ans:"20",exp:"3+5+7+5 = 20."},
+      {q:"Data: {2, 4, 6, 8}. Median = ?",ans:"5",exp:"(4+6)/2 = 5."},
+      {q:"For group [10; 20) with n=5, the midpoint contribution n·c = ?",ans:"75",exp:"5·15 = 75."},
+      {q:"Modal group frequencies: 4, 8, 6. Modal group index (1 or 2 or 3)?",ans:"2",exp:"Max at index 2 (n=8)."},
+      {q:"Median of grouped data with N = 30 lies at cumulative position = ?",ans:"15",exp:"N/2 = 15."}
+    ]
+  }
+};
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let USER = null;
+let SYS1_STATE = {1:{ans:{}},2:{ans:{}},3:{ans:{}}};
+let SYS2_STATE = {
+  1:{started:false,finished:false,mc:{},tf:{},short:{},startTime:0,elapsed:0},
+  2:{started:false,finished:false,mc:{},tf:{},short:{},startTime:0,elapsed:0},
+  3:{started:false,finished:false,mc:{},tf:{},short:{},startTime:0,elapsed:0}
+};
+const EXAM_DURATION = 45 * 60;
+let TIMER_INTERVAL = null;
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+function doLogin(){
+  const name = document.getElementById('lgName').value.trim();
+  const cls  = document.getElementById('lgClass').value.trim();
+  const sch  = document.getElementById('lgSchool').value.trim() || 'THPT Trần Phú';
+  if(!name || !cls){ toast('⚠️ Please enter your name and class'); return; }
+  USER = {name, cls, sch, joined: Date.now()};
+  localStorage.setItem('math11_user', JSON.stringify(USER));
+  startApp();
+}
+function doLogout(){
+  if(!confirm('Log out?')) return;
+  localStorage.removeItem('math11_user');
+  location.reload();
+}
+function startApp(){
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('ubName').textContent = USER.name + ' · ' + USER.cls;
+  document.getElementById('ubAvatar').textContent = USER.name.charAt(0).toUpperCase();
+  document.getElementById('heroName').textContent = USER.name.split(' ').pop();
+  renderVocab();
+  renderSys1(1);
+  renderSys2(1);
+  renderRanking();
+}
+
+/* ============================================================
+   TABS
+   ============================================================ */
+document.getElementById('tabs').addEventListener('click', e => {
+  const t = e.target.closest('.tab');
+  if(!t) return;
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('sec-' + t.dataset.tab).classList.add('active');
+  if(t.dataset.tab === 'rank') renderRanking();
+});
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(window._tt);
+  window._tt = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ============================================================
+   VOCABULARY
+   ============================================================ */
+function renderVocab(){
+  [1,2,3].forEach(g => {
+    const el = document.getElementById('vocab' + g);
+    if(!el) return;
+    el.innerHTML = VOCAB[g].map(v => `
+      <div class="vocab-item">
+        <div class="en">${v.en}
+          <button class="speak-btn" onclick="speak('${v.en.replace(/'/g,"\\'").replace(/\(/g,'').replace(/\)/g,'')}')">🔊</button>
+        </div>
+        <div class="ipa">${v.ipa}</div>
+        <div class="vi">${v.vi}</div>
+      </div>`).join('');
+  });
+}
+function speak(text){
+  if(!('speechSynthesis' in window)){ toast('⚠️ Your browser does not support speech.'); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.8; u.pitch = 1.05;
+  speechSynthesis.speak(u);
+}
+
+/* ============================================================
+   SYSTEM 1
+   ============================================================ */
+document.querySelectorAll('.sys1-tab[data-g]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sys1-tab[data-g]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderSys1(+btn.dataset.g);
+  });
+});
+
+function renderSys1(g){
+  const st = SYS1_STATE[g];
+  const qs = SYS1[g];
+  const labels = ['A','B','C','D'];
+  const diff = ['easy','easy','easy','med','med','med','med','hard','hard','hard'];
+  let html = '';
+  qs.forEach((q, i) => {
+    const chosen = st.ans[i];
+    const done = chosen !== undefined;
+    const isRight = done && chosen === q.ans;
+    html += `
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num">${i+1}</div>
+          <div class="q-text">${q.q}</div>
+          <span class="pill ${diff[i]}" style="margin-left:auto">${diff[i]==='easy'?'Dễ':diff[i]==='med'?'TB':'Khó'}</span>
+        </div>
+        <div class="opt-list">
+          ${q.opts.map((o, k) => {
+            let cls = 'opt';
+            if(done){
+              cls += ' locked';
+              if(k === q.ans) cls += ' correct';
+              else if(k === chosen) cls += ' wrong';
+            }
+            return `<div class="${cls}" onclick="pickS1(${g},${i},${k})">
+              <div class="letter">${labels[k]}</div><div>${o}</div>
+            </div>`;
+          }).join('')}
+        </div>
+        <div class="explain ${done?'show':''}">
+          <b>${isRight?'✅ Correct!':'❌ Incorrect.'}</b> ${q.exp}
+        </div>
+      </div>`;
+  });
+  const answered = Object.keys(st.ans).length;
+  const correct = Object.keys(st.ans).filter(k => st.ans[k] === qs[k].ans).length;
+  if(answered === qs.length){
+    const pct = Math.round(correct / qs.length * 100);
+    let advice = '';
+    if(pct >= 90) advice = "🌟 Excellent! You have mastered this chapter. Move on to the next group.";
+    else if(pct >= 70) advice = "👍 Good job! Review the missed questions and try again.";
+    else if(pct >= 50) advice = "📖 You need more practice. Re-read the theory section and redo this group.";
+    else advice = "🔁 Please review the theory carefully, then practise again. Ask your teacher if needed.";
+    html = `
+      <div class="result-box">
+        <div class="label">GROUP ${g} RESULT</div>
+        <div class="score">${correct}/${qs.length}</div>
+        <div class="label">Accuracy: ${pct}%</div>
+        <div class="stat-grid">
+          <div class="stat"><div class="n" style="color:#10b981">${correct}</div><div class="l">Correct</div></div>
+          <div class="stat"><div class="n" style="color:#ef4444">${qs.length-correct}</div><div class="l">Wrong</div></div>
+          <div class="stat"><div class="n">${qs.length}</div><div class="l">Total</div></div>
+        </div>
+        <div class="advice"><h4>📌 Study advice</h4>${advice}</div>
+        <div style="margin-top:16px"><button class="btn" onclick="resetSys1(${g})">🔄 Redo this group</button></div>
+      </div>` + html;
+  } else {
+    html = `
+      <div class="card" style="padding:14px 20px">
+        <b>Progress:</b> ${answered} / ${qs.length} answered
+        ${answered>0?`<button class="btn ghost" style="float:right;padding:6px 14px;font-size:12px" onclick="resetSys1(${g})">Reset</button>`:''}
+      </div>` + html;
+  }
+  document.getElementById('sys1Content').innerHTML = html;
+}
+function pickS1(g, i, k){
+  if(SYS1_STATE[g].ans[i] !== undefined) return;
+  SYS1_STATE[g].ans[i] = k;
+  renderSys1(g);
+}
+function resetSys1(g){
+  SYS1_STATE[g] = {ans:{}};
+  renderSys1(g);
+}
+
+/* ============================================================
+   SYSTEM 2
+   ============================================================ */
+document.querySelectorAll('.sys1-tab[data-s2]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if(SYS2_STATE[currentS2()]?.started && !SYS2_STATE[currentS2()]?.finished){
+      if(!confirm('Bạn đang làm bài. Chuyển nhóm sẽ mất tiến trình đang làm. Tiếp tục?')) return;
+    }
+    document.querySelectorAll('.sys1-tab[data-s2]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    clearInterval(SYS2_TIMER);
+    renderSys2(+btn.dataset.s2);
+  });
+});
+function currentS2(){
+  const a = document.querySelector('.sys1-tab[data-s2].active');
+  return a ? +a.dataset.s2 : 1;
+}
+
+function renderSys2(g){
+  const data = SYS2[g];
+  const st = SYS2_STATE[g];
+  const container = document.getElementById('sys2Content');
+
+  if(!st.started){
+    container.innerHTML = `
+      <div class="card" style="text-align:center;padding:30px">
+        <h3 style="justify-content:center"><span class="num">📝</span>Mock Exam – Group ${g}</h3>
+        <p style="color:#64748b;margin-bottom:14px">22 questions · 3 parts · 45 minutes</p>
+        <ul style="text-align:left;max-width:520px;margin:0 auto 18px;font-size:14px;color:#475569">
+          <li><b>Part I (12 MCQ):</b> 12 × 0.25 = 3.0 points</li>
+          <li><b>Part II (4 True/False × 4 items):</b> up to 4.0 points</li>
+          <li><b>Part III (6 short answer):</b> 6 × 0.5 = 3.0 points</li>
+          <li>Total: <b>10.0 points</b></li>
+        </ul>
+        <button class="btn" onclick="startExam(${g})">▶ Start Exam</button>
+      </div>`;
+    return;
+  }
+  if(st.finished){ renderSys2Result(g); return; }
+
+  let html = `
+    <div class="timer-bar">
+      <div>⏱ <span class="time" id="timerDisplay">45:00</span></div>
+      <div style="font-size:12px;opacity:.85">Group ${g}</div>
+      <div class="info" id="progressInfo">0 / 22 answered</div>
+    </div>`;
+
+  html += `<div class="q-part-title">PART I. Multiple choice (12 × 0.25 points)</div>`;
+  data.mc.forEach((q, i) => {
+    const chosen = st.mc[i];
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <div class="opt-list">
+        ${q.opts.map((o, k) => {
+          const cls = 'opt' + (chosen === k ? ' selected' : '');
+          return `<div class="${cls}" style="${chosen===k?'background:#eef2ff;border-color:#6366f1':''}" onclick="pickMC(${g},${i},${k})">
+            <div class="letter">${'ABCD'[k]}</div><div>${o}</div></div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+
+  html += `<div class="q-part-title">PART II. True / False (4 × up to 1 point)</div>`;
+  data.tf.forEach((q, i) => {
+    const sel = st.tf[i] || {};
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <div class="tf-list">
+        ${q.items.map((it, k) => `
+          <div class="tf-row">
+            <div class="stmt"><b>${'abcd'[k]})</b> ${it.s}</div>
+            <button class="tf-btn t ${sel[k]===true?'selected':''}" onclick="pickTF(${g},${i},${k},true)">True</button>
+            <button class="tf-btn f ${sel[k]===false?'selected':''}" onclick="pickTF(${g},${i},${k},false)">False</button>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  });
+
+  html += `<div class="q-part-title">PART III. Short answer (6 × 0.5 points)</div>`;
+  data.short.forEach((q, i) => {
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <input class="short-input" placeholder="Your answer..." value="${st.short[i]||''}" oninput="pickShort(${g},${i},this.value)">
+    </div>`;
+  });
+
+  html += `<div style="text-align:center;margin:24px 0">
+    <button class="btn" onclick="submitExam(${g})">✅ Submit Exam</button>
+    <button class="btn ghost" onclick="cancelExam(${g})" style="margin-left:8px">Cancel</button>
+  </div>`;
+
+  container.innerHTML = html;
+  startTimer(g);
+}
+function startExam(g){
+  SYS2_STATE[g] = {started:true,finished:false,mc:{},tf:{},short:{},startTime:Date.now(),elapsed:0};
+  renderSys2(g);
+}
+function cancelExam(g){
+  if(!confirm('Cancel this exam? Your progress will be lost.')) return;
+  clearInterval(TIMER_INTERVAL);
+  SYS2_STATE[g] = {started:false,finished:false,mc:{},tf:{},short:{},startTime:0,elapsed:0};
+  renderSys2(g);
+}
+function pickMC(g,i,k){ SYS2_STATE[g].mc[i]=k; updateProgress(g); refreshOpts(g); }
+function pickTF(g,i,k,v){
+  const st = SYS2_STATE[g];
+  if(!st.tf[i]) st.tf[i]={};
+  st.tf[i][k]=v;
+  updateProgress(g); renderSys2(g);
+}
+function pickShort(g,i,v){ SYS2_STATE[g].short[i]=v; updateProgress(g); }
+
+function refreshOpts(g){
+  const st = SYS2_STATE[g];
+  const data = SYS2[g];
+  const blocks = document.querySelectorAll('#sys2Content .q-block');
+  data.mc.forEach((q,i)=>{
+    const chosen = st.mc[i];
+    if(blocks[i]){
+      const opts = blocks[i].querySelectorAll('.opt');
+      opts.forEach((o,k)=>{
+        o.classList.remove('selected');
+        o.style.background=''; o.style.borderColor='';
+        if(chosen===k){ o.classList.add('selected'); o.style.background='#eef2ff'; o.style.borderColor='#6366f1'; }
+      });
+    }
+  });
+}
+function updateProgress(g){
+  const st = SYS2_STATE[g];
+  const total = 12 + 4 + 6;
+  let done = Object.keys(st.mc).length;
+  done += Object.keys(st.tf).filter(k => Object.keys(st.tf[k]).length > 0).length;
+  done += Object.values(st.short).filter(v => v && v.trim()).length;
+  const el = document.getElementById('progressInfo');
+  if(el) el.textContent = `${done} / ${total} answered`;
+}
+
+function startTimer(g){
+  clearInterval(TIMER_INTERVAL);
+  TIMER_INTERVAL = setInterval(() => {
+    const st = SYS2_STATE[g];
+    if(!st.started || st.finished){ clearInterval(TIMER_INTERVAL); return; }
+    const el = Date.now() - st.startTime;
+    const remain = EXAM_DURATION * 1000 - el;
+    const m = Math.max(0, Math.floor(remain/60000));
+    const s = Math.max(0, Math.floor((remain%60000)/1000));
+    const disp = document.getElementById('timerDisplay');
+    if(disp){
+      disp.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+      if(remain < 5*60*1000) disp.classList.add('warn');
+    }
+    if(remain <= 0){ clearInterval(TIMER_INTERVAL); toast('⏰ Time is up! Auto-submitting...'); submitExam(g); }
+  }, 1000);
+}
+function submitExam(g){
+  clearInterval(TIMER_INTERVAL);
+  const st = SYS2_STATE[g];
+  st.finished = true;
+  st.elapsed = Math.floor((Date.now() - st.startTime) / 1000);
+  st.score = computeScore(g);
+  saveRanking(g, st.score, st.elapsed);
+  renderSys2Result(g);
+}
+function computeScore(g){
+  const data = SYS2[g];
+  const st = SYS2_STATE[g];
+  let score = 0;
+  data.mc.forEach((q,i)=>{ if(st.mc[i]===q.ans) score += 0.25; });
+  data.tf.forEach((q,i)=>{
+    const sel = st.tf[i] || {};
+    let c = 0;
+    q.items.forEach((it,k)=>{ if(sel[k]===it.a) c++; });
+    if(c===1) score += 0.1;
+    else if(c===2) score += 0.25;
+    else if(c===3) score += 0.5;
+    else if(c===4) score += 1.0;
+  });
+  data.short.forEach((q,i)=>{
+    const v = (st.short[i]||'').toString().trim().toLowerCase().replace(/\s+/g,'');
+    const a = q.ans.toString().trim().toLowerCase();
+    if(v === a) score += 0.5;
+  });
+  return Math.round(score * 100) / 100;
+}
+
+function renderSys2Result(g){
+  const data = SYS2[g];
+  const st = SYS2_STATE[g];
+  const total = 10;
+  const pct = Math.round(st.score / total * 100);
+  const m = Math.floor(st.elapsed / 60);
+  const s = st.elapsed % 60;
+  let advice = '';
+  if(pct >= 90) advice = "🌟 Outstanding! You are fully prepared for the mid-term.";
+  else if(pct >= 75) advice = "👍 Very good. Review a few weak spots before the exam.";
+  else if(pct >= 50) advice = "📖 Fair. Focus on the theory sections you are weak at.";
+  else advice = "🔁 You need serious revision. Re-read theory, then redo System 1 first.";
+
+  let wrongMC = [], wrongTF = [], wrongShort = [];
+  data.mc.forEach((q,i)=>{ if(st.mc[i]!==q.ans) wrongMC.push(i+1); });
+  data.tf.forEach((q,i)=>{
+    const sel = st.tf[i]||{};
+    const n = q.items.filter((it,k)=>sel[k]===it.a).length;
+    if(n<4) wrongTF.push(`Q${i+1} (${n}/4)`);
+  });
+  data.short.forEach((q,i)=>{
+    const v = (st.short[i]||'').toString().trim().toLowerCase().replace(/\s+/g,'');
+    if(v !== q.ans.toString().trim().toLowerCase()) wrongShort.push(i+1);
+  });
+
+  let html = `
+    <div class="result-box">
+      <div class="label">EXAM RESULT · GROUP ${g}</div>
+      <div class="score">${st.score.toFixed(2)} / 10</div>
+      <div class="label">${pct}% · Time: ${m}m ${s}s</div>
+      <div class="stat-grid">
+        <div class="stat"><div class="n">${wrongMC.length}</div><div class="l">MCQ wrong</div></div>
+        <div class="stat"><div class="n">${wrongTF.length}</div><div class="l">T/F partial</div></div>
+        <div class="stat"><div class="n">${wrongShort.length}</div><div class="l">Short wrong</div></div>
+      </div>
+      <div class="advice">
+        <h4>📌 Study advice</h4>${advice}
+        ${wrongMC.length? `<p><b>Wrong MCQ:</b> ${wrongMC.join(', ')}</p>`:''}
+        ${wrongTF.length? `<p><b>Partial T/F:</b> ${wrongTF.join(', ')}</p>`:''}
+        ${wrongShort.length? `<p><b>Wrong short answer:</b> ${wrongShort.join(', ')}</p>`:''}
+      </div>
+      <div style="margin-top:18px">
+        <button class="btn ghost" onclick="retakeExam(${g})">🔄 Retake</button>
+      </div>
+    </div>`;
+
+  html += `<div class="q-part-title">Review – Part I</div>`;
+  data.mc.forEach((q,i)=>{
+    const chosen = st.mc[i];
+    const ok = chosen === q.ans;
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <div class="opt-list">
+        ${q.opts.map((o,k)=>{
+          let cls='opt locked';
+          if(k===q.ans) cls+=' correct';
+          else if(k===chosen) cls+=' wrong';
+          return `<div class="${cls}"><div class="letter">${'ABCD'[k]}</div><div>${o}</div></div>`;
+        }).join('')}
+      </div>
+      <div class="explain show"><b>${ok?'✅ Correct':'❌ Wrong'}</b> — ${q.exp}</div>
+    </div>`;
+  });
+
+  html += `<div class="q-part-title">Review – Part II</div>`;
+  data.tf.forEach((q,i)=>{
+    const sel = st.tf[i]||{};
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <div class="tf-list">
+        ${q.items.map((it,k)=>{
+          const ok = sel[k]===it.a;
+          return `<div class="tf-row">
+            <div class="stmt">${ok?'✅':'❌'} <b>${'abcd'[k]})</b> ${it.s}</div>
+            <span style="font-size:12px;font-weight:600;color:${ok?'#10b981':'#ef4444'}">${it.a?'True':'False'}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  });
+
+  html += `<div class="q-part-title">Review – Part III</div>`;
+  data.short.forEach((q,i)=>{
+    const v = st.short[i]||'(blank)';
+    const ok = v.toString().trim().toLowerCase().replace(/\s+/g,'') === q.ans.toString().trim().toLowerCase();
+    html += `<div class="q-block">
+      <div class="q-header"><div class="q-num">${i+1}</div><div class="q-text">${q.q}</div></div>
+      <div style="padding:10px;background:#f8fafc;border-radius:10px;font-size:14px">
+        Your answer: <b>${v}</b><br>
+        Correct answer: <b style="color:#10b981">${q.ans}</b><br>
+        <span style="color:#64748b;font-size:12px">${q.exp}</span>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('sys2Content').innerHTML = html;
+}
+function retakeExam(g){
+  if(!confirm('Retake this exam?')) return;
+  SYS2_STATE[g] = {started:false,finished:false,mc:{},tf:{},short:{},startTime:0,elapsed:0};
+  renderSys2(g);
+}
+
+/* ============================================================
+   RANKING
+   ============================================================ */
+function todayKey(){
+  const d = new Date();
+  return `rank11_${d.getFullYear()}_${d.getMonth()+1}_${d.getDate()}`;
+}
+function saveRanking(g, score, elapsed){
+  if(!USER) return;
+  const key = todayKey();
+  const all = JSON.parse(localStorage.getItem(key) || '[]');
+  all.push({name:USER.name,cls:USER.cls,school:USER.sch,group:g,score,elapsed,time:new Date().toLocaleTimeString('vi-VN')});
+  localStorage.setItem(key, JSON.stringify(all));
+}
+function renderRanking(){
+  const key = todayKey();
+  const all = JSON.parse(localStorage.getItem(key) || '[]');
+  const el = document.getElementById('rankContent');
+  if(all.length === 0){
+    el.innerHTML = `<div class="empty"><div class="ico">🏁</div>No results yet today.<br>Take a System-2 exam to appear on the leaderboard!</div>`;
+    return;
+  }
+  const best = {};
+  all.forEach(r => {
+    const k = r.name + '|' + r.group;
+    if(!best[k] || r.score > best[k].score || (r.score === best[k].score && r.elapsed < best[k].elapsed))
+      best[k] = r;
+  });
+  const rows = Object.values(best).sort((a,b) => b.score - a.score || a.elapsed - b.elapsed);
+  let html = `<table class="rank-table"><thead><tr>
+    <th>#</th><th>Name</th><th>Class</th><th>Group</th><th>Score</th><th>Time</th>
+  </tr></thead><tbody>`;
+  rows.forEach((r,i)=>{
+    const m = Math.floor(r.elapsed/60), s = r.elapsed%60;
+    let badge = `<span class="rank-badge">${i+1}</span>`;
+    if(i===0) badge = `<span class="rank-badge gold">🥇</span>`;
+    else if(i===1) badge = `<span class="rank-badge silver">🥈</span>`;
+    else if(i===2) badge = `<span class="rank-badge bronze">🥉</span>`;
+    html += `<tr>
+      <td>${badge}</td><td><b>${r.name}</b></td><td>${r.cls}</td>
+      <td>G${r.group}</td>
+      <td><b style="color:#4f46e5">${r.score.toFixed(2)}</b></td>
+      <td>${m}m ${s}s</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  el.innerHTML = html;
+}
+function clearRank(){
+  if(!confirm('Clear today\'s ranking data?')) return;
+  localStorage.removeItem(todayKey());
+  renderRanking();
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+(function(){
+  const saved = localStorage.getItem('math11_user');
+  if(saved){
+    try{ USER = JSON.parse(saved); startApp(); }
+    catch(e){ localStorage.removeItem('math11_user'); }
+  }
+})();
+</script>
+</body>
+</html>
